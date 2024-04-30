@@ -1,4 +1,4 @@
-import { menu } from "./js/db.js";
+import { buttonsData, menu } from "./js/db.js";
 import { calculatePrice, elements } from "./js/helpers.js";
 
 
@@ -48,9 +48,12 @@ const searchCategory = (e) =>{
     const filtredMenu = menu.filter((item) => item.category === category);
 
     // Hepsi seçilirse bütün menuyu ekrana aktarır.
-if(category === "all")
+if(category == "undefined"){
+
+
+} else if (category === "all") {
 renderMenuItems(menu);
-else{
+}  else{
 
     // Filtrelenen elemanları ekrana aktarmadsı için menu dizisinden
     // oluşturduğumuz filtredMenu dizisini ekrana aktarır.
@@ -62,12 +65,39 @@ renderButtons(category)
 
 };
 
-
+// Ekrana butonları basma
 const renderButtons = (active) => {
+console.log(active);
 
     // eski butonları ekrandan sil
    elements.buttonsArea.innerHTML = "";
 
+   // Yeni butonlar oluşturma
+buttonsData.forEach((btn) => {
+console.log(btn);
+    // HTML butonu oluşturma
+    const buttonEle = document.createElement("button");
+
+    // Butonlara class larını ekleme
+   buttonEle.className = "btn btn-outline-dark filter-btn";
+
+   // içerisinde ki yazıyı değiştirme
+   buttonEle.textContent = btn.text;
+
+   // hangi kategori olduğu bilgisini buton elementine ekleme
+   buttonEle.dataset.category = btn.value;
+  
+
+   // eğer ki active kategorisi ile buton eşleşirse ona farklı class ekleme
+if(btn.value === active){
+   buttonEle.classList.add("bg-dark", "text-light");
+}
+
+ // HTML e gönderme
+   elements.buttonsArea.appendChild(buttonEle);
+
+
+});
 
    
 };

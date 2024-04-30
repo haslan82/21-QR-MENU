@@ -83,7 +83,7 @@ export const menu = [
     
   ];
 
- const buttonsData = [
+ export const buttonsData = [
   {
     id:1,
     text:"Hepsi",
