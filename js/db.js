@@ -80,4 +80,29 @@ export const menu = [
       img: "./images/item-10.jpeg",
       desc: "Bizon etinin eşsiz lezzeti, özel baharatlar ve soslarla birleşiyor. Bizon Bifteği, akşam yemeğiniz için mükemmel bir seçim!",
     },
+    
   ];
+
+ const buttonsData = [
+  {
+    id:1,
+    text:"Hepsi",
+    value:"all",
+  },
+  {
+    id:2,
+    text:"Kahvaltı",
+    value:"breakfast",
+  },
+  {
+    id:3,
+    text:"Öğle Yemeği",
+    value:"lunch",
+  },
+  {
+    id:4,
+    text:"İçecekler",
+    value:"shakes",
+  },
+
+ ];
