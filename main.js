@@ -14,7 +14,7 @@ const renderMenuItems = ( menuItems ) => {
     `
     <a 
     id="card" 
-    href="/productDetail.html? id=${item.id} " 
+    href="/productDetail.html?id=${item.id} & title = ${item.title}"
     class=" text-decoration-none text-black d-flex flex-column flex-md-row gap-2">
         <img src="${item.img}"
          class="rounded-shadow" >
@@ -105,6 +105,15 @@ if(btn.value === active){
 
 
  //! Olay İzleyicileri
-document.addEventListener("DOMContentLoaded", renderMenuItems(menu));
+
+ //* SAyfa yüklendiği anda ekrana renderButtons ve renderMenuItems fonksiyonlarını çalıştırır.
+//* document.addEventListener("DOMContentLoaded", renderMenuItems(menu), renderButtons("all"));
+
+// üstte ki gibi de yazılır allta ki gibi de olur
+document.addEventListener("DOMContentLoaded", () =>{
+renderButtons("all");
+renderMenuItems(menu);
+});
+
 
 elements.buttonsArea.addEventListener("click", searchCategory);
