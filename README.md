@@ -3,7 +3,7 @@
 ## HTML, CSS ve JAVASCRİPT kullanılarak tasarlanmış kullanışlı ve dinamik bir restaurant menusüdür.
 
 
-# GIF
+# Gif
 
 ![](images/Screen%20Recording%202024-04-30%20at%2007.08.26.07%20PM.gif)
 
